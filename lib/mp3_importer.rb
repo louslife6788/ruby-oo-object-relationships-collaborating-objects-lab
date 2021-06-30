@@ -6,7 +6,8 @@ class MP3Importer
 
     
 
-    def initialize(path)
+    def initialize(path)          # path is equal to ./spec/fixtures/mp3s  wich is directions to a folder
+
         @path = path
         
 
@@ -15,11 +16,14 @@ class MP3Importer
 
     def files
         #  binding.pry
-         all_files = Dir[@path+"/*"]
+         all_files = Dir[@path+"/*"] #this is equal to  ./spec/fixtures/mp3s/* wich enters the folder containing the files and saves them as the varible all_files
          x = all_files.map do |file|
-            file[@path.length + 1, file.length - 4]
+            file[@path.length + 1, file.length - 4] #x = ["Action Bronson - Larry Csonka - indie.mp3",
+                                                            # "Real Estate - Green Aisles - country.mp3",
+                                                            # "Real Estate - It's Real - hip-hop.mp3",
+                                                            # "Thundercat - For Love I Come - dance.mp3"]
          end
-        #   binding.pry
+          
        
     end
 
